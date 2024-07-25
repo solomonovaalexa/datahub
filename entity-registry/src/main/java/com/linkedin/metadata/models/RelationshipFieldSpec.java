@@ -30,4 +30,8 @@ public class RelationshipFieldSpec implements FieldSpec {
   public boolean isLineageRelationship() {
     return relationshipAnnotation.isLineage();
   }
+
+  public boolean isIndexedRelationship() {
+    return relationshipAnnotation.isIndexed();
+  }
 }

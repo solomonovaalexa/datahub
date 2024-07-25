@@ -24,6 +24,7 @@ public class RelationshipAnnotation {
   private static final String UPDATED_ON = "updatedOn";
   private static final String UPDATED_ACTOR = "updatedActor";
   private static final String PROPERTIES = "properties";
+  private static final String INDEX_FIELD = "index";
 
   private static final String VIA = "via";
 
@@ -37,6 +38,7 @@ public class RelationshipAnnotation {
   String updatedActor;
   String properties;
   String via;
+  boolean indexed;
 
   @Nonnull
   public static RelationshipAnnotation fromPegasusAnnotationObject(
@@ -84,6 +86,7 @@ public class RelationshipAnnotation {
         AnnotationUtils.getField(map, UPDATED_ACTOR, String.class);
     final Optional<String> properties = AnnotationUtils.getField(map, PROPERTIES, String.class);
     final Optional<String> via = AnnotationUtils.getField(map, VIA, String.class);
+    final Optional<Boolean> indexed = AnnotationUtils.getField(map, INDEX_FIELD, Boolean.class);
 
     return new RelationshipAnnotation(
         name.get(),
@@ -95,14 +98,15 @@ public class RelationshipAnnotation {
         updatedOn.orElse(null),
         updatedActor.orElse(null),
         properties.orElse(null),
-        via.orElse(null));
+        via.orElse(null),
+        indexed.orElse(true));
   }
 
   /**
    * Constructor for backwards compatibility
    *
    * @param name
-   * @param entityTypes
+   * @param validDestinationTypes
    * @param isUpstream
    * @param isLineage
    * @param createdOn
@@ -131,6 +135,7 @@ public class RelationshipAnnotation {
         updatedOn,
         updatedActor,
         properties,
-        null);
+        null,
+        true);
   }
 }

@@ -5,6 +5,7 @@ import com.linkedin.data.schema.ArrayDataSchema;
 import com.linkedin.data.schema.DataSchema;
 import com.linkedin.data.schema.NamedDataSchema;
 import com.linkedin.data.schema.RecordDataSchema;
+import com.linkedin.data.schema.RecordDataSchema.Field;
 import com.linkedin.data.schema.TyperefDataSchema;
 import com.linkedin.data.schema.UnionDataSchema;
 import com.linkedin.data.schema.annotation.DataSchemaRichContextTraverser;
@@ -25,9 +26,13 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import lombok.extern.slf4j.Slf4j;
+
+import static com.linkedin.data.schema.DataSchema.Type.*;
+
 
 @Slf4j
 public class EntitySpecBuilder {
@@ -358,6 +363,21 @@ public class EntitySpecBuilder {
   }
 
   private void validateAspect(final AspectSpec aspectSpec) {
+    Set<Field> urnReferences = aspectSpec.getPegasusSchema()
+        .getFields()
+        .stream()
+        .filter(x -> x.getType().getType().equals(TYPEREF))
+        .filter(x -> ((TyperefDataSchema) x.getType()).getName().equals("Urn"))
+        .collect(Collectors.toSet());
+
+    for (Field urnReference : urnReferences) {
+      if (!aspectSpec.getRelationshipFieldSpecMap().containsKey("/"+urnReference.getName())) {
+        failValidation(
+            String.format(
+                "Aspect: %s has an urn type field: %s with no associated relationship",
+                aspectSpec.getName(), urnReference.getName()));
+      }
+    }
     if (aspectSpec.isTimeseries()) {
       if (aspectSpec.getPegasusSchema().contains(TIMESTAMP_FIELD_NAME)) {
         DataSchema timestamp =
@@ -413,7 +433,7 @@ public class EntitySpecBuilder {
                 .getField(ASPECTS_FIELD_NAME)
                 .getType()
                 .getDereferencedDataSchema();
-    if (aspectArray.getItems().getType() != DataSchema.Type.TYPEREF
+    if (aspectArray.getItems().getType() != TYPEREF
         || aspectArray.getItems().getDereferencedType() != DataSchema.Type.UNION) {
 
       failValidation(

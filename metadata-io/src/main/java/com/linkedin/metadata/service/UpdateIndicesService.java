@@ -400,8 +400,13 @@ public class UpdateIndicesService implements SearchIndicesService {
           urnToRelationshipTypesBeingAdded);
     }
 
-    Map<RelationshipFieldSpec, List<Object>> extractedFields =
-        FieldExtractor.extractFields(aspect, aspectSpec.getRelationshipFieldSpecs());
+    // Extract fields for relationships that should be indexed only
+    List<RelationshipFieldSpec> indexedRelationshipFieldSpecs = aspectSpec.getRelationshipFieldSpecs()
+        .stream()
+        .filter(RelationshipFieldSpec::isIndexedRelationship)
+        .collect(Collectors.toList());
+
+    Map<RelationshipFieldSpec, List<Object>> extractedFields = FieldExtractor.extractFields(aspect, indexedRelationshipFieldSpecs);
 
     for (Map.Entry<RelationshipFieldSpec, List<Object>> entry : extractedFields.entrySet()) {
       Set<String> relationshipTypes =
@@ -655,7 +660,7 @@ public class UpdateIndicesService implements SearchIndicesService {
 
     final HashMap<Urn, Set<String>> urnToRelationshipTypesBeingAdded =
         edgeAndRelationTypes.getSecond();
-    if (urnToRelationshipTypesBeingAdded.size() > 0) {
+    if (!urnToRelationshipTypesBeingAdded.isEmpty()) {
       for (Map.Entry<Urn, Set<String>> entry : urnToRelationshipTypesBeingAdded.entrySet()) {
         _graphService.removeEdgesFromNode(
             entry.getKey(),

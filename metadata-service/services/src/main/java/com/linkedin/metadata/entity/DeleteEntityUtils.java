@@ -33,7 +33,7 @@ public class DeleteEntityUtils {
    * Utility method that removes fields from a given aspect based on its aspect spec that follows
    * the following logic:
    *
-   * <p>1. If field is optional and not part of an array → remove the field. 2. If is a field that
+   * <p>1. If field is optional and not part of an array → remove the field. 2. If it is a field that
    * is part of an array (has an `*` in the path spec) → go up to the nearest array and remove the
    * element. Extra → If array only has 1 element which is being deleted→ optional rules (if
    * optional set null, otherwise delete) 3. If field is non-optional and does not belong to an
@@ -43,8 +43,9 @@ public class DeleteEntityUtils {
    * @param aspect Aspect in which the value property exists.
    * @param schema {@link DataSchema} of the aspect being processed.
    * @param aspectPath Path within the aspect to where the value can be found.
-   * @return A deep copy of the aspect. Modified if the value was found and according to the logic
-   *     specified above. Otherwise, a copy of the original aspect is returned.
+   * @return A deep copy of the aspect. {@code null} if the aspect is invalid and should be deleted.
+   * Modified if the value was found and according to the logic specified above.
+   * Otherwise, a copy of the original aspect is returned.
    */
   public static Aspect getAspectWithReferenceRemoved(
       String value, RecordTemplate aspect, DataSchema schema, PathSpec aspectPath) {

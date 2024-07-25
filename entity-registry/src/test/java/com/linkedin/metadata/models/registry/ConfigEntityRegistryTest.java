@@ -7,6 +7,7 @@ import com.linkedin.data.schema.annotation.PathSpecBasedSchemaAnnotationVisitor;
 import com.linkedin.metadata.models.EntitySpec;
 import com.linkedin.metadata.models.EventSpec;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Map;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -63,5 +64,12 @@ public class ConfigEntityRegistryTest {
                 .getClassLoader()
                 .getResourceAsStream("test-entity-registry.yml"));
     assertEquals(configEntityRegistry.getIdentifier(), "test-registry");
+  }
+
+  @Test
+  public void testDefaultEntitySpecs() {
+    InputStream inputStream = ClassLoader.getSystemResourceAsStream("entity-registry.yml");
+    EntityRegistry entityRegistry = new ConfigEntityRegistry(inputStream);
+    assertEquals(entityRegistry.getIdentifier(), "default");
   }
 }
