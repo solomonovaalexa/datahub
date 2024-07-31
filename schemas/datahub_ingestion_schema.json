@@ -246,7 +246,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-07-31T19:45:17.605931+00:00",
+                        "end_time": "2024-07-31T21:40:17.492719+00:00",
                         "start_time": "2024-07-30T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -6017,7 +6017,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-07-31T19:45:03.547623+00:00",
+                        "end_time": "2024-07-31T21:40:03.477388+00:00",
                         "start_time": "2024-07-30T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -8035,7 +8035,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-07-31T19:45:18.108286+00:00",
+                        "end_time": "2024-07-31T21:40:17.986529+00:00",
                         "start_time": "2024-07-30T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -8766,9 +8766,8 @@
                 },
                 "metadata_endpoint": {
                     "title": "Metadata Endpoint",
-                    "description": "The dbt Cloud metadata API endpoint. This is deprecated, and will be removed in a future release. Please use access_url instead.",
+                    "description": "The dbt Cloud metadata API endpoint. If not provided, we will try to infer it from the access_url.",
                     "default": "https://metadata.cloud.getdbt.com/graphql",
-                    "deprecated": true,
                     "type": "string"
                 },
                 "token": {
