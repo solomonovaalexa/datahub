@@ -888,7 +888,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-20T14:17:32.064411+00:00",
+                        "end_time": "2024-08-20T18:52:08.774422+00:00",
                         "start_time": "2024-08-19T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -7262,7 +7262,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-20T14:17:32.582682+00:00",
+                        "end_time": "2024-08-20T18:52:09.269543+00:00",
                         "start_time": "2024-08-19T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11464,7 +11464,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-20T14:17:17.419768+00:00",
+                        "end_time": "2024-08-20T18:51:54.727983+00:00",
                         "start_time": "2024-08-19T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11621,6 +11621,14 @@
                 "project_ids": {
                     "title": "Project Ids",
                     "description": "Ingests specified project_ids. Use this property if you want to specify what projects to ingest or don't want to give project resourcemanager.projects.list to your service account. Overrides `project_id_pattern`.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "project_labels": {
+                    "title": "Project Labels",
+                    "description": "Ingests projects with the specified labels. Set value in the format of `key:value`. Use this property to define which projects to ingest basedon project-level labels. If project_ids or project_id is set, this configuration has no effect. The ingestion process filters projects by label first, and then applies the project_id_pattern.",
                     "type": "array",
                     "items": {
                         "type": "string"
