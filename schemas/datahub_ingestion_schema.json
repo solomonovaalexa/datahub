@@ -888,7 +888,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-22T01:31:03.907544+00:00",
+                        "end_time": "2024-08-22T08:49:48.409557+00:00",
                         "start_time": "2024-08-21T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -7262,7 +7262,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-22T01:31:04.408493+00:00",
+                        "end_time": "2024-08-22T08:49:48.902594+00:00",
                         "start_time": "2024-08-21T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -9935,6 +9935,22 @@
                     "description": "When enabled, platform instance will be added in dashboard and chart urn.",
                     "default": false,
                     "type": "boolean"
+                },
+                "folder_path_pattern": {
+                    "title": "Folder Path Pattern",
+                    "description": "Allow or deny dashboards from specific folders. For example: \ndeny: \n - sales/deprecated \nThis pattern will deny the ingestion of all dashboards and looks within the sales/deprecated folder. \nDashboards will only be ingested if they're allowed by both this config and dashboard_pattern.",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
                 }
             },
             "required": [
@@ -11464,7 +11480,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-22T01:30:49.688332+00:00",
+                        "end_time": "2024-08-22T08:49:34.326604+00:00",
                         "start_time": "2024-08-21T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
