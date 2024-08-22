@@ -888,7 +888,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-22T10:21:58.966450+00:00",
+                        "end_time": "2024-08-22T16:11:30.179564+00:00",
                         "start_time": "2024-08-21T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -5252,6 +5252,12 @@
                     "description": "Whether to sort schema fields by fieldPath when inferring schemas.",
                     "default": false,
                     "type": "boolean"
+                },
+                "generate_partition_aspects": {
+                    "title": "Generate Partition Aspects",
+                    "description": "Whether to generate partition aspects for partitioned tables. On older servers for backward compatibility, this should be set to False. This flag will be removed in future versions.",
+                    "default": true,
+                    "type": "boolean"
                 }
             },
             "required": [
@@ -7262,7 +7268,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-22T10:21:59.832174+00:00",
+                        "end_time": "2024-08-22T16:11:30.684379+00:00",
                         "start_time": "2024-08-21T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11480,7 +11486,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-22T10:21:43.897333+00:00",
+                        "end_time": "2024-08-22T16:11:15.849094+00:00",
                         "start_time": "2024-08-21T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -15804,6 +15810,55 @@
             },
             "additionalProperties": false
         },
+        "SortKeyType": {
+            "title": "SortKeyType",
+            "description": "An enumeration.",
+            "enum": [
+                "STRING",
+                "INTEGER",
+                "FLOAT",
+                "DATETIME",
+                "DATE"
+            ]
+        },
+        "SortKey": {
+            "title": "SortKey",
+            "type": "object",
+            "properties": {
+                "key": {
+                    "title": "Key",
+                    "description": "The key to sort on. This can be a compound key based on the path_spec variables.",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The date format to use when sorting. This is used to parse the date from the key. The format should follow the java [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html) format.",
+                    "default": "STRING",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/SortKeyType"
+                        }
+                    ]
+                },
+                "date_format": {
+                    "title": "Date Format",
+                    "description": "The date format to use when sorting. This is used to parse the date from the key. The format should follow the java [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html) format.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "key"
+            ],
+            "additionalProperties": false
+        },
+        "FolderTraversalMethod": {
+            "title": "FolderTraversalMethod",
+            "description": "An enumeration.",
+            "enum": [
+                "ALL",
+                "MIN_MAX",
+                "MAX"
+            ]
+        },
         "PathSpec": {
             "title": "PathSpec",
             "type": "object",
@@ -15816,6 +15871,7 @@
                 "exclude": {
                     "title": "Exclude",
                     "description": "list of paths in glob pattern which will be excluded while scanning for the datasets",
+                    "default": [],
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -15861,6 +15917,27 @@
                 "allow_double_stars": {
                     "title": "Allow Double Stars",
                     "description": "Allow double stars in the include path. This can affect performance significantly if enabled",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "autodetect_partitions": {
+                    "title": "Autodetect Partitions",
+                    "description": "Autodetect partition(s) from the path. If set to true, it will autodetect partition key/value if the folder format is {partition_key}={partition_value} for example `year=2024`",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "traversal_method": {
+                    "description": "Method to traverse the folder. ALL: Traverse all the folders, MIN_MAX: Traverse the folders by finding min and max value, MAX: Traverse the folder with max value",
+                    "default": "MAX",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/FolderTraversalMethod"
+                        }
+                    ]
+                },
+                "include_hidden_folders": {
+                    "title": "Include Hidden Folders",
+                    "description": "Include hidden folders in the traversal (folders starting with . or _",
                     "default": false,
                     "type": "boolean"
                 }
