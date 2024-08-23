@@ -323,7 +323,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -587,7 +587,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -870,7 +870,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "query_file": {
@@ -888,7 +888,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-23T03:37:55.263053+00:00",
+                        "end_time": "2024-08-23T18:02:46.674802+00:00",
                         "start_time": "2024-08-22T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -1053,7 +1053,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -1430,7 +1430,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -1823,7 +1823,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -2259,7 +2259,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -2634,7 +2634,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "max_retries": {
@@ -3014,7 +3014,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -3210,7 +3210,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -3354,7 +3354,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -3667,7 +3667,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "explore_naming_pattern": {
@@ -3990,7 +3990,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -4204,7 +4204,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "bucket_duration": {
@@ -4683,7 +4683,7 @@
             "properties": {
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -4953,7 +4953,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -5128,7 +5128,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -5559,7 +5559,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -5866,7 +5866,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -6088,7 +6088,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "connect_uri": {
@@ -6200,7 +6200,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "connect_uri": {
@@ -6456,7 +6456,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -6741,7 +6741,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -7043,7 +7043,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -7268,7 +7268,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-23T03:37:55.765420+00:00",
+                        "end_time": "2024-08-23T18:02:47.166736+00:00",
                         "start_time": "2024-08-22T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -7445,7 +7445,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -7810,7 +7810,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -8015,7 +8015,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "host": {
@@ -8268,7 +8268,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -8532,7 +8532,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -8720,7 +8720,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -8978,7 +8978,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -9468,7 +9468,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -9747,7 +9747,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "explore_naming_pattern": {
@@ -10205,7 +10205,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -10493,7 +10493,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -11059,7 +11059,7 @@
             "properties": {
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "env": {
@@ -11295,7 +11295,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -11486,7 +11486,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-23T03:37:40.814466+00:00",
+                        "end_time": "2024-08-23T18:02:32.223328+00:00",
                         "start_time": "2024-08-22T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11802,7 +11802,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -12031,7 +12031,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -12267,7 +12267,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -12454,7 +12454,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -12966,7 +12966,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -13204,7 +13204,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -13415,7 +13415,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -13736,7 +13736,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -13954,7 +13954,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -14268,7 +14268,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "domain": {
@@ -14325,7 +14325,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -14438,7 +14438,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "platform": {
@@ -14694,7 +14694,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "stateful_ingestion": {
@@ -15671,7 +15671,7 @@
                 },
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
                     "type": "string"
                 },
                 "connector_database": {
