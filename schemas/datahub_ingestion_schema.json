@@ -888,7 +888,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-26T00:56:12.545543+00:00",
+                        "end_time": "2024-08-26T06:00:41.752093+00:00",
                         "start_time": "2024-08-25T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -7268,7 +7268,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-26T00:56:13.039567+00:00",
+                        "end_time": "2024-08-26T06:00:42.258318+00:00",
                         "start_time": "2024-08-25T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11227,22 +11227,6 @@
                     "default": true,
                     "type": "boolean"
                 },
-                "schema_pattern": {
-                    "title": "Schema Pattern",
-                    "description": "Regex patterns for schemas to filter in ingestion. Specify regex to only match the schema name. e.g. to match all tables in schema analytics, use the regex 'analytics'",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
-                },
                 "table_pattern": {
                     "title": "Table Pattern",
                     "description": "Regex patterns for tables to filter in ingestion. Specify regex to match the entire table name in database.schema.table format. e.g. to match all tables starting with customer in Customer database and public schema, use the regex 'Customer.public.customer.*'",
@@ -11414,6 +11398,88 @@
                         }
                     ]
                 },
+                "include_data_platform_instance": {
+                    "title": "Include Data Platform Instance",
+                    "description": "Whether to create a DataPlatformInstance aspect, equal to the BigQuery project id. If enabled, will cause redundancy in the browse path for BigQuery entities in the UI, because the project id is represented as the top-level container.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "enable_legacy_sharded_table_support": {
+                    "title": "Enable Legacy Sharded Table Support",
+                    "description": "Use the legacy sharded table urn suffix added.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "project_ids": {
+                    "title": "Project Ids",
+                    "description": "Ingests specified project_ids. Use this property if you want to specify what projects to ingest or don't want to give project resourcemanager.projects.list to your service account. Overrides `project_id_pattern`.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "project_labels": {
+                    "title": "Project Labels",
+                    "description": "Ingests projects with the specified labels. Set value in the format of `key:value`. Use this property to define which projects to ingest basedon project-level labels. If project_ids or project_id is set, this configuration has no effect. The ingestion process filters projects by label first, and then applies the project_id_pattern.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "project_id_pattern": {
+                    "title": "Project Id Pattern",
+                    "description": "Regex patterns for project_id to filter in ingestion.",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
+                "dataset_pattern": {
+                    "title": "Dataset Pattern",
+                    "description": "Regex patterns for dataset to filter in ingestion. Specify regex to only match the schema name. e.g. to match all tables in schema analytics, use the regex 'analytics'",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
+                "match_fully_qualified_names": {
+                    "title": "Match Fully Qualified Names",
+                    "description": "[deprecated] Whether `dataset_pattern` is matched against fully qualified dataset name `<project_id>.<dataset_name>`.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "table_snapshot_pattern": {
+                    "title": "Table Snapshot Pattern",
+                    "description": "Regex patterns for table snapshots to filter in ingestion. Specify regex to match the entire snapshot name in database.schema.snapshot format. e.g. to match all snapshots starting with customer in Customer database and public schema, use the regex 'Customer.public.customer.*'",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
                 "rate_limit": {
                     "title": "Rate Limit",
                     "description": "Should we rate limit requests made to API.",
@@ -11459,22 +11525,6 @@
                     "description": "[Advanced] The BigQuery project in which queries are executed. Will be passed when creating a job. If not passed, falls back to the project associated with the service account.",
                     "type": "string"
                 },
-                "project_id_pattern": {
-                    "title": "Project Id Pattern",
-                    "description": "Regex patterns for project_id to filter in ingestion.",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
-                },
                 "include_schema_metadata": {
                     "title": "Include Schema Metadata",
                     "description": "Whether to ingest the BigQuery schema, i.e. projects, schemas, tables, and views.",
@@ -11486,7 +11536,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-26T00:55:58.330823+00:00",
+                        "end_time": "2024-08-26T06:00:27.324706+00:00",
                         "start_time": "2024-08-25T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11555,38 +11605,10 @@
                         }
                     ]
                 },
-                "dataset_pattern": {
-                    "title": "Dataset Pattern",
-                    "description": "Regex patterns for dataset to filter in ingestion. Specify regex to only match the schema name. e.g. to match all tables in schema analytics, use the regex 'analytics'",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
-                },
-                "match_fully_qualified_names": {
-                    "title": "Match Fully Qualified Names",
-                    "description": "[deprecated] Whether `dataset_pattern` is matched against fully qualified dataset name `<project_id>.<dataset_name>`.",
-                    "default": true,
-                    "type": "boolean"
-                },
                 "include_external_url": {
                     "title": "Include External Url",
                     "description": "Whether to populate BigQuery Console url to Datasets/Tables",
                     "default": true,
-                    "type": "boolean"
-                },
-                "include_data_platform_instance": {
-                    "title": "Include Data Platform Instance",
-                    "description": "Whether to create a DataPlatformInstance aspect, equal to the BigQuery project id. If enabled, will cause redundancy in the browse path for BigQuery entities in the UI, because the project id is represented as the top-level container.",
-                    "default": false,
                     "type": "boolean"
                 },
                 "include_table_snapshots": {
@@ -11594,22 +11616,6 @@
                     "description": "Whether table snapshots should be ingested.",
                     "default": true,
                     "type": "boolean"
-                },
-                "table_snapshot_pattern": {
-                    "title": "Table Snapshot Pattern",
-                    "description": "Regex patterns for table snapshots to filter in ingestion. Specify regex to match the entire snapshot name in database.schema.snapshot format. e.g. to match all snapshots starting with customer in Customer database and public schema, use the regex 'Customer.public.customer.*'",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
                 },
                 "debug_include_full_payloads": {
                     "title": "Debug Include Full Payloads",
@@ -11634,27 +11640,6 @@
                     "description": "Maximum number of columns to process in a table. This is a low level config property which should be touched with care. This restriction is needed because excessively wide tables can result in failure to ingest the schema.",
                     "default": 300,
                     "type": "integer"
-                },
-                "project_id": {
-                    "title": "Project Id",
-                    "description": "[deprecated] Use project_id_pattern or project_ids instead.",
-                    "type": "string"
-                },
-                "project_ids": {
-                    "title": "Project Ids",
-                    "description": "Ingests specified project_ids. Use this property if you want to specify what projects to ingest or don't want to give project resourcemanager.projects.list to your service account. Overrides `project_id_pattern`.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "project_labels": {
-                    "title": "Project Labels",
-                    "description": "Ingests projects with the specified labels. Set value in the format of `key:value`. Use this property to define which projects to ingest basedon project-level labels. If project_ids or project_id is set, this configuration has no effect. The ingestion process filters projects by label first, and then applies the project_id_pattern.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
                 },
                 "lineage_use_sql_parser": {
                     "title": "Lineage Use Sql Parser",
@@ -11684,12 +11669,6 @@
                     "title": "Extract Lineage From Catalog",
                     "description": "This flag enables the data lineage extraction from Data Lineage API exposed by Google Data Catalog. NOTE: This extractor can't build views lineage. It's recommended to enable the view's DDL parsing. Read the docs to have more information about: https://cloud.google.com/data-catalog/docs/concepts/about-data-lineage",
                     "default": false,
-                    "type": "boolean"
-                },
-                "enable_legacy_sharded_table_support": {
-                    "title": "Enable Legacy Sharded Table Support",
-                    "description": "Use the legacy sharded table urn suffix added.",
-                    "default": true,
                     "type": "boolean"
                 },
                 "extract_policy_tags_from_catalog": {
