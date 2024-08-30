@@ -888,7 +888,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-30T10:25:25.599153+00:00",
+                        "end_time": "2024-08-30T20:35:54.532632+00:00",
                         "start_time": "2024-08-29T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -7435,7 +7435,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-30T10:25:26.096068+00:00",
+                        "end_time": "2024-08-30T20:35:55.042422+00:00",
                         "start_time": "2024-08-29T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11703,7 +11703,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-30T10:25:11.098243+00:00",
+                        "end_time": "2024-08-30T20:35:40.246543+00:00",
                         "start_time": "2024-08-29T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -14495,6 +14495,22 @@
                 "connector_patterns": {
                     "title": "Connector Patterns",
                     "description": "Regex patterns for connectors to filter in ingestion.",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
+                "destination_patterns": {
+                    "title": "Destination Patterns",
+                    "description": "Regex patterns for destinations to filter in ingestion.",
                     "default": {
                         "allow": [
                             ".*"
