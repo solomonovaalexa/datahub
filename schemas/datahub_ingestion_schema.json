@@ -888,8 +888,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-30T20:35:54.532632+00:00",
-                        "start_time": "2024-08-29T00:00:00+00:00",
+                        "end_time": "2024-08-31T01:26:46.138177+00:00",
+                        "start_time": "2024-08-30T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -7435,8 +7435,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-30T20:35:55.042422+00:00",
-                        "start_time": "2024-08-29T00:00:00+00:00",
+                        "end_time": "2024-08-31T01:26:46.940780+00:00",
+                        "start_time": "2024-08-30T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11703,8 +11703,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-08-30T20:35:40.246543+00:00",
-                        "start_time": "2024-08-29T00:00:00+00:00",
+                        "end_time": "2024-08-31T01:26:31.900427+00:00",
+                        "start_time": "2024-08-30T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11799,6 +11799,12 @@
                 "use_tables_list_query_v2": {
                     "title": "Use Tables List Query V2",
                     "description": "List tables using an improved query that extracts partitions and last modified timestamps more accurately. Requires the ability to read table data. Automatically enabled when profiling is enabled.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "use_queries_v2": {
+                    "title": "Use Queries V2",
+                    "description": "If enabled, uses the new queries extractor to extract queries from bigquery.",
                     "default": false,
                     "type": "boolean"
                 },
