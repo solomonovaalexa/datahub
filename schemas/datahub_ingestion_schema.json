@@ -712,7 +712,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-09-04T20:47:07.769548+00:00",
+                        "end_time": "2024-09-04T22:11:28.197814+00:00",
                         "start_time": "2024-09-03T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -1145,7 +1145,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-09-04T20:46:52.926764+00:00",
+                        "end_time": "2024-09-04T22:11:13.456762+00:00",
                         "start_time": "2024-09-03T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -1721,7 +1721,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-09-04T20:47:08.274065+00:00",
+                        "end_time": "2024-09-04T22:11:28.694337+00:00",
                         "start_time": "2024-09-03T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -3544,6 +3544,12 @@
                     "title": "Query Result Location",
                     "description": "S3 path to the [query result bucket](https://docs.aws.amazon.com/athena/latest/ug/querying.html#query-results-specify-location) which should be used by AWS Athena to store results of thequeries executed by DataHub.",
                     "type": "string"
+                },
+                "extract_partitions": {
+                    "title": "Extract Partitions",
+                    "description": "Extract partitions for tables. Partition extraction needs to run a query (`select * from table$partitions`) on the table. Disable this if you don't want to grant select permission.",
+                    "default": true,
+                    "type": "boolean"
                 }
             },
             "required": [
