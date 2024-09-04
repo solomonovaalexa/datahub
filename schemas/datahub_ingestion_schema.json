@@ -888,8 +888,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-09-03T19:51:21.534661+00:00",
-                        "start_time": "2024-09-02T00:00:00+00:00",
+                        "end_time": "2024-09-04T14:56:47.311901+00:00",
+                        "start_time": "2024-09-03T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -7435,8 +7435,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-09-03T19:51:22.043687+00:00",
-                        "start_time": "2024-09-02T00:00:00+00:00",
+                        "end_time": "2024-09-04T14:56:47.812024+00:00",
+                        "start_time": "2024-09-03T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11500,18 +11500,6 @@
                     "default": true,
                     "type": "boolean"
                 },
-                "include_view_lineage": {
-                    "title": "Include View Lineage",
-                    "description": "Populates view->view and table->view lineage using DataHub's sql parser.",
-                    "default": true,
-                    "type": "boolean"
-                },
-                "include_view_column_lineage": {
-                    "title": "Include View Column Lineage",
-                    "description": "Populates column-level lineage for  view->view and table->view lineage using DataHub's sql parser. Requires `include_view_lineage` to be enabled.",
-                    "default": true,
-                    "type": "boolean"
-                },
                 "use_file_backed_cache": {
                     "title": "Use File Backed Cache",
                     "description": "Whether to use a file backed cache for the view definitions.",
@@ -11703,8 +11691,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-09-03T19:51:06.523156+00:00",
-                        "start_time": "2024-09-02T00:00:00+00:00",
+                        "end_time": "2024-09-04T14:56:32.659518+00:00",
+                        "start_time": "2024-09-03T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
