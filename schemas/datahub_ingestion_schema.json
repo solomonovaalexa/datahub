@@ -712,7 +712,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-09-18T09:37:48.376588+00:00",
+                        "end_time": "2024-09-18T11:58:06.755494+00:00",
                         "start_time": "2024-09-17T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -1150,7 +1150,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-09-18T09:37:33.285295+00:00",
+                        "end_time": "2024-09-18T11:57:51.977254+00:00",
                         "start_time": "2024-09-17T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -1726,7 +1726,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-09-18T09:37:48.882803+00:00",
+                        "end_time": "2024-09-18T11:58:07.259570+00:00",
                         "start_time": "2024-09-17T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11931,6 +11931,12 @@
             "title": "DataHubGcSourceConfig",
             "type": "object",
             "properties": {
+                "dry_run": {
+                    "title": "Dry Run",
+                    "description": "Whether to perform a dry run or not. This is only supported for dataprocess cleanup and soft deleted entities cleanup.",
+                    "default": false,
+                    "type": "boolean"
+                },
                 "cleanup_expired_tokens": {
                     "title": "Cleanup Expired Tokens",
                     "description": "Whether to clean up expired tokens or not",
