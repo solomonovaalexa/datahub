@@ -3188,7 +3188,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-10T01:35:31.842531+00:00",
+                        "end_time": "2024-10-10T03:38:12.319351+00:00",
                         "start_time": "2024-10-09T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -6886,7 +6886,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-10T01:35:16.290975+00:00",
+                        "end_time": "2024-10-10T03:37:57.320279+00:00",
                         "start_time": "2024-10-09T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -7273,6 +7273,118 @@
             "required": [
                 "path_specs"
             ],
+            "additionalProperties": false
+        },
+        "preset": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "preset"
+                    ]
+                },
+                "config": {
+                    "$ref": "#/definitions/preset_config"
+                }
+            },
+            "required": [
+                "type",
+                "config"
+            ]
+        },
+        "preset_config": {
+            "title": "PresetConfig",
+            "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
+            "type": "object",
+            "properties": {
+                "platform_instance": {
+                    "title": "Platform Instance",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to. This should be unique within the platform. See https://datahubproject.io/docs/platform-instances/ for more details.",
+                    "type": "string"
+                },
+                "env": {
+                    "title": "Env",
+                    "description": "Environment to use in namespace when constructing URNs",
+                    "default": "PROD",
+                    "type": "string"
+                },
+                "stateful_ingestion": {
+                    "title": "Stateful Ingestion",
+                    "description": "Preset Stateful Ingestion Config.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/StatefulStaleMetadataRemovalConfig"
+                        }
+                    ]
+                },
+                "connect_uri": {
+                    "title": "Connect Uri",
+                    "description": "Preset workspace URL.",
+                    "default": "",
+                    "type": "string"
+                },
+                "display_uri": {
+                    "title": "Display Uri",
+                    "description": "optional URL to use in links (if `connect_uri` is only for ingestion)",
+                    "type": "string"
+                },
+                "domain": {
+                    "title": "Domain",
+                    "description": "regex patterns for tables to filter to assign domain_key. ",
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/AllowDenyPattern"
+                    }
+                },
+                "username": {
+                    "title": "Username",
+                    "description": "Superset username.",
+                    "type": "string"
+                },
+                "password": {
+                    "title": "Password",
+                    "description": "Superset password.",
+                    "type": "string"
+                },
+                "api_key": {
+                    "title": "Api Key",
+                    "description": "Preset.io API key.",
+                    "type": "string"
+                },
+                "api_secret": {
+                    "title": "Api Secret",
+                    "description": "Preset.io API secret.",
+                    "type": "string"
+                },
+                "manager_uri": {
+                    "title": "Manager Uri",
+                    "description": "Preset.io API URL",
+                    "default": "https://api.app.preset.io",
+                    "type": "string"
+                },
+                "provider": {
+                    "title": "Provider",
+                    "description": "Superset provider.",
+                    "default": "db",
+                    "type": "string"
+                },
+                "options": {
+                    "title": "Options",
+                    "default": {},
+                    "type": "object"
+                },
+                "database_alias": {
+                    "title": "Database Alias",
+                    "description": "Can be used to change mapping for database names in superset to what you have in datahub",
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            },
             "additionalProperties": false
         },
         "powerbi-report-server": {
@@ -10739,7 +10851,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-10T01:35:31.323139+00:00",
+                        "end_time": "2024-10-10T03:38:11.813183+00:00",
                         "start_time": "2024-10-09T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -12587,6 +12699,22 @@
                 "password": {
                     "title": "Password",
                     "description": "Superset password.",
+                    "type": "string"
+                },
+                "api_key": {
+                    "title": "Api Key",
+                    "description": "Preset.io API key.",
+                    "type": "string"
+                },
+                "api_secret": {
+                    "title": "Api Secret",
+                    "description": "Preset.io API secret.",
+                    "type": "string"
+                },
+                "manager_uri": {
+                    "title": "Manager Uri",
+                    "description": "Preset.io API URL",
+                    "default": "https://api.app.preset.io",
                     "type": "string"
                 },
                 "provider": {
@@ -18158,6 +18286,9 @@
                 },
                 {
                     "$ref": "#/definitions/abs"
+                },
+                {
+                    "$ref": "#/definitions/preset"
                 },
                 {
                     "$ref": "#/definitions/powerbi-report-server"
