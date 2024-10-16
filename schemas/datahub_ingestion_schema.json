@@ -3188,7 +3188,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-16T12:04:09.235290+00:00",
+                        "end_time": "2024-10-16T15:40:28.669631+00:00",
                         "start_time": "2024-10-15T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -5448,7 +5448,7 @@
                 },
                 "workspace_id_as_urn_part": {
                     "title": "Workspace Id As Urn Part",
-                    "description": "Highly recommend changing this to True, as you can have the same workspace nameTo maintain backward compatability, this is set to False which uses workspace name",
+                    "description": "It is recommended to set this to True only if you have legacy workspaces based on Office 365 groups, as those workspaces can have identical names.To maintain backward compatibility, this is set to False which uses workspace name",
                     "default": false,
                     "type": "boolean"
                 },
@@ -5629,6 +5629,12 @@
                         ],
                         "type": "string"
                     }
+                },
+                "include_workspace_name_in_dataset_urn": {
+                    "title": "Include Workspace Name In Dataset Urn",
+                    "description": "It is recommended to set this to true, as it helps prevent the overwriting of datasets.Read section #11560 at https://datahubproject.io/docs/how/updating-datahub/ before enabling this option.To maintain backward compatibility, this is set to False.",
+                    "default": false,
+                    "type": "boolean"
                 }
             },
             "required": [
@@ -6904,7 +6910,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-16T12:03:53.934089+00:00",
+                        "end_time": "2024-10-16T15:40:12.965412+00:00",
                         "start_time": "2024-10-15T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -10869,7 +10875,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-16T12:04:08.701597+00:00",
+                        "end_time": "2024-10-16T15:40:28.129261+00:00",
                         "start_time": "2024-10-15T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
