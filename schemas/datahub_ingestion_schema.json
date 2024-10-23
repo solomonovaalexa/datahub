@@ -2254,7 +2254,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-23T03:08:05.636786+00:00",
+                        "end_time": "2024-10-23T03:33:01.023769+00:00",
                         "start_time": "2024-10-22T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -7325,7 +7325,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-23T03:08:20.451102+00:00",
+                        "end_time": "2024-10-23T03:33:15.677435+00:00",
                         "start_time": "2024-10-22T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11405,7 +11405,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-23T03:08:20.985411+00:00",
+                        "end_time": "2024-10-23T03:33:16.278226+00:00",
                         "start_time": "2024-10-22T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -13439,7 +13439,7 @@
                 },
                 "connector_patterns": {
                     "title": "Connector Patterns",
-                    "description": "Regex patterns for connectors to filter in ingestion.",
+                    "description": "Filtering regex patterns for connector ids. They're visible in the Fivetran UI under Connectors -> Setup -> Fivetran Connector ID.",
                     "default": {
                         "allow": [
                             ".*"
@@ -13455,7 +13455,7 @@
                 },
                 "destination_patterns": {
                     "title": "Destination Patterns",
-                    "description": "Regex patterns for destinations to filter in ingestion.",
+                    "description": "Regex patterns for destination ids to filter in ingestion. Fivetran destination IDs are usually two word identifiers e.g. canyon_tolerable, and are not the same as the destination database name. They're visible in the Fivetran UI under Destinations -> Overview -> Destination Group ID.",
                     "default": {
                         "allow": [
                             ".*"
