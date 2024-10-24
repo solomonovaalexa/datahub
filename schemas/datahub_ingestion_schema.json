@@ -2254,7 +2254,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-24T17:42:01.637649+00:00",
+                        "end_time": "2024-10-24T19:14:34.630196+00:00",
                         "start_time": "2024-10-23T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -3036,6 +3036,12 @@
                         }
                     ]
                 },
+                "session_trust_env": {
+                    "title": "Session Trust Env",
+                    "description": "Configures the trust_env property in the requests session. If set to false (default value) it will bypass proxy settings. See https://requests.readthedocs.io/en/latest/api/#requests.Session.trust_env for more information.",
+                    "default": false,
+                    "type": "boolean"
+                },
                 "extract_column_level_lineage": {
                     "title": "Extract Column Level Lineage",
                     "description": "When enabled, extracts column-level lineage from Tableau Datasources",
@@ -3245,6 +3251,15 @@
                     "description": "When enabled, sites are added as containers and therefore visible in the folder structure within Datahub.",
                     "default": false,
                     "type": "boolean"
+                },
+                "permission_ingestion": {
+                    "title": "Permission Ingestion",
+                    "description": "Configuration settings for ingesting Tableau groups and their capabilities as custom properties.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/PermissionIngestionConfig"
+                        }
+                    ]
                 }
             },
             "required": [
@@ -7331,7 +7346,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-24T17:42:22.221120+00:00",
+                        "end_time": "2024-10-24T19:14:54.962240+00:00",
                         "start_time": "2024-10-23T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11411,7 +11426,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-24T17:42:23.352709+00:00",
+                        "end_time": "2024-10-24T19:14:55.499698+00:00",
                         "start_time": "2024-10-23T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -16334,6 +16349,35 @@
                     "additionalProperties": {
                         "type": "string"
                     }
+                }
+            },
+            "additionalProperties": false
+        },
+        "PermissionIngestionConfig": {
+            "title": "PermissionIngestionConfig",
+            "type": "object",
+            "properties": {
+                "enable_workbooks": {
+                    "title": "Enable Workbooks",
+                    "description": "Whether or not to enable group permission ingestion for workbooks. Default: True",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "group_name_pattern": {
+                    "title": "Group Name Pattern",
+                    "description": "Filter for Tableau group names when ingesting group permissions. For example, you could filter for groups that include the term 'Consumer' in their name by adding '^.*Consumer$' to the allow list.By default, all groups will be ingested. You can both allow and deny groups based on their name using their name, or a Regex pattern. Deny patterns always take precedence over allow patterns. ",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
                 }
             },
             "additionalProperties": false
