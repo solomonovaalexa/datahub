@@ -2254,7 +2254,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-24T17:04:23.240566+00:00",
+                        "end_time": "2024-10-24T17:42:01.637649+00:00",
                         "start_time": "2024-10-23T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -2322,6 +2322,12 @@
                             "$ref": "#/definitions/AllowDenyPattern"
                         }
                     ]
+                },
+                "include_table_constraints": {
+                    "title": "Include Table Constraints",
+                    "description": "Whether to ingest table constraints. If you know you don't use table constraints, you can disable it to save one extra query per dataset. In general it should be enabled",
+                    "default": true,
+                    "type": "boolean"
                 },
                 "include_external_url": {
                     "title": "Include External Url",
@@ -7325,7 +7331,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-24T17:04:42.596393+00:00",
+                        "end_time": "2024-10-24T17:42:22.221120+00:00",
                         "start_time": "2024-10-23T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11405,7 +11411,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-24T17:04:43.690232+00:00",
+                        "end_time": "2024-10-24T17:42:23.352709+00:00",
                         "start_time": "2024-10-23T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -13475,18 +13481,9 @@
                     "default": true,
                     "type": "boolean"
                 },
-                "sources_to_database": {
-                    "title": "Sources To Database",
-                    "description": "A mapping of the connector's all sources to its database. Use connector id as key.",
-                    "default": {},
-                    "type": "object",
-                    "additionalProperties": {
-                        "type": "string"
-                    }
-                },
                 "sources_to_platform_instance": {
                     "title": "Sources To Platform Instance",
-                    "description": "A mapping of the connector's all sources dataset to platform instance. Use connector id as key.",
+                    "description": "A mapping from connector id to its platform/instance/env/database details.",
                     "default": {},
                     "type": "object",
                     "additionalProperties": {
@@ -13495,7 +13492,7 @@
                 },
                 "destination_to_platform_instance": {
                     "title": "Destination To Platform Instance",
-                    "description": "A mapping of destination dataset to platform instance. Use destination id as key.",
+                    "description": "A mapping of destination id to its platform/instance/env details.",
                     "default": {},
                     "type": "object",
                     "additionalProperties": {
@@ -16345,6 +16342,11 @@
             "title": "PlatformDetail",
             "type": "object",
             "properties": {
+                "platform": {
+                    "title": "Platform",
+                    "description": "Override the platform type detection.",
+                    "type": "string"
+                },
                 "platform_instance": {
                     "title": "Platform Instance",
                     "description": "The instance of the platform that all assets produced by this recipe belong to",
@@ -16354,6 +16356,11 @@
                     "title": "Env",
                     "description": "The environment that all assets produced by DataHub platform ingestion source belong to",
                     "default": "PROD",
+                    "type": "string"
+                },
+                "database": {
+                    "title": "Database",
+                    "description": "The database that all assets produced by this connector belong to. For destinations, this defaults to the fivetran log config's database.",
                     "type": "string"
                 }
             },
