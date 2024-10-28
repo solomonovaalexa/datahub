@@ -2254,8 +2254,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-26T00:03:12.257088+00:00",
-                        "start_time": "2024-10-25T00:00:00+00:00",
+                        "end_time": "2024-10-28T21:32:51.007712+00:00",
+                        "start_time": "2024-10-27T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -2476,6 +2476,18 @@
                     "description": "Number of worker threads to use to parallelize BigQuery Dataset Metadata Extraction. Set to 1 to disable.",
                     "default": 20,
                     "type": "integer"
+                },
+                "region_qualifiers": {
+                    "title": "Region Qualifiers",
+                    "description": "BigQuery regions to be scanned for bigquery jobs when using `use_queries_v2`. See [this](https://cloud.google.com/bigquery/docs/information-schema-jobs#scope_and_syntax) for details.",
+                    "default": [
+                        "region-us",
+                        "region-eu"
+                    ],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             },
             "additionalProperties": false
@@ -7346,8 +7358,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-26T00:03:32.060483+00:00",
-                        "start_time": "2024-10-25T00:00:00+00:00",
+                        "end_time": "2024-10-28T21:33:11.616284+00:00",
+                        "start_time": "2024-10-27T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11426,8 +11438,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-26T00:03:32.641880+00:00",
-                        "start_time": "2024-10-25T00:00:00+00:00",
+                        "end_time": "2024-10-28T21:33:12.313950+00:00",
+                        "start_time": "2024-10-27T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
