@@ -2268,8 +2268,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-30T18:56:36.544991+00:00",
-                        "start_time": "2024-10-29T00:00:00+00:00",
+                        "end_time": "2024-10-31T18:09:19.917740+00:00",
+                        "start_time": "2024-10-30T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -7384,8 +7384,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-30T18:56:56.213654+00:00",
-                        "start_time": "2024-10-29T00:00:00+00:00",
+                        "end_time": "2024-10-31T18:09:39.848149+00:00",
+                        "start_time": "2024-10-30T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -9512,6 +9512,15 @@
                             "$ref": "#/definitions/SoftDeletedEntitiesCleanupConfig"
                         }
                     ]
+                },
+                "execution_request_cleanup": {
+                    "title": "Execution Request Cleanup",
+                    "description": "Configuration for execution request cleanup",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/DatahubExecutionRequestCleanupConfig"
+                        }
+                    ]
                 }
             },
             "additionalProperties": false
@@ -11464,8 +11473,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-10-30T18:56:56.778997+00:00",
-                        "start_time": "2024-10-29T00:00:00+00:00",
+                        "end_time": "2024-10-31T18:09:40.375905+00:00",
+                        "start_time": "2024-10-30T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -17568,6 +17577,43 @@
                     "title": "Query",
                     "description": "Query to filter entities",
                     "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "DatahubExecutionRequestCleanupConfig": {
+            "title": "DatahubExecutionRequestCleanupConfig",
+            "type": "object",
+            "properties": {
+                "keep_history_min_count": {
+                    "title": "Keep History Min Count",
+                    "description": "Minimum number of execution requests to keep, per ingestion source",
+                    "default": 10,
+                    "type": "integer"
+                },
+                "keep_history_max_count": {
+                    "title": "Keep History Max Count",
+                    "description": "Maximum number of execution requests to keep, per ingestion source",
+                    "default": 1000,
+                    "type": "integer"
+                },
+                "keep_history_max_days": {
+                    "title": "Keep History Max Days",
+                    "description": "Maximum number of days to keep execution requests for, per ingestion source",
+                    "default": 30,
+                    "type": "integer"
+                },
+                "batch_read_size": {
+                    "title": "Batch Read Size",
+                    "description": "Number of records per read operation",
+                    "default": 100,
+                    "type": "integer"
+                },
+                "enabled": {
+                    "title": "Enabled",
+                    "description": "Global switch for this cleanup task",
+                    "default": true,
+                    "type": "boolean"
                 }
             },
             "additionalProperties": false
