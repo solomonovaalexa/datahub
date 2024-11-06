@@ -2268,8 +2268,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-11-05T16:52:25.173219+00:00",
-                        "start_time": "2024-11-04T00:00:00+00:00",
+                        "end_time": "2024-11-06T09:11:07.057165+00:00",
+                        "start_time": "2024-11-05T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -6795,7 +6795,7 @@
                     "description": "Configure how is ownership ingested",
                     "default": {
                         "create_corp_user": true,
-                        "use_powerbi_email": false,
+                        "use_powerbi_email": true,
                         "remove_email_suffix": false,
                         "dataset_configured_by_as_owner": false,
                         "owner_criteria": null
@@ -7384,8 +7384,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-11-05T16:52:45.207404+00:00",
-                        "start_time": "2024-11-04T00:00:00+00:00",
+                        "end_time": "2024-11-06T09:11:25.086206+00:00",
+                        "start_time": "2024-11-05T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11473,8 +11473,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-11-05T16:52:45.902188+00:00",
-                        "start_time": "2024-11-04T00:00:00+00:00",
+                        "end_time": "2024-11-06T09:11:25.649789+00:00",
+                        "start_time": "2024-11-05T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11677,8 +11677,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-11-05T16:52:32.852598+00:00",
-                        "start_time": "2024-11-04T00:00:00+00:00",
+                        "end_time": "2024-11-06T09:11:13.658312+00:00",
+                        "start_time": "2024-11-05T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -17435,7 +17435,7 @@
                 "use_powerbi_email": {
                     "title": "Use Powerbi Email",
                     "description": "Use PowerBI User email to ingest as corpuser, default is powerbi user identifier",
-                    "default": false,
+                    "default": true,
                     "type": "boolean"
                 },
                 "remove_email_suffix": {
