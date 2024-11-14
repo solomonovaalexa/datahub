@@ -2271,7 +2271,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-11-14T00:51:43.255286+00:00",
+                        "end_time": "2024-11-14T08:11:59.514516+00:00",
                         "start_time": "2024-11-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -7393,7 +7393,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-11-14T00:51:58.043237+00:00",
+                        "end_time": "2024-11-14T08:12:14.260533+00:00",
                         "start_time": "2024-11-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11482,7 +11482,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-11-14T00:51:58.606252+00:00",
+                        "end_time": "2024-11-14T08:12:14.798040+00:00",
                         "start_time": "2024-11-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11686,7 +11686,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-11-14T00:51:48.482658+00:00",
+                        "end_time": "2024-11-14T08:12:04.669312+00:00",
                         "start_time": "2024-11-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -12061,7 +12061,7 @@
                 "scheme": {
                     "title": "Scheme",
                     "description": "Will be set automatically to default value.",
-                    "default": "oracle+oracledb",
+                    "default": "oracle",
                     "type": "string"
                 },
                 "sqlalchemy_uri": {
